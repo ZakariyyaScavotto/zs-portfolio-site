@@ -1,0 +1,13 @@
+.Resume {
+	width: 80vw;
+	margin: 2.5% auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 75vh; /* Adjust as needed */
+}
+
+#pdfViewer {
+	width: 100%;
+	height: 100%;
+}

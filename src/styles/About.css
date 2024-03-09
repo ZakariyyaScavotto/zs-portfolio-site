@@ -1,0 +1,20 @@
+.About {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	width: 80vw;
+	margin: 0 auto;
+}
+#AboutHead {
+	grid-column: span 2;
+}
+#AboutImage {
+	width: 25vw;
+	height: 30vw;
+	object-fit: contain; /* Ensures the image maintains aspect ratio */
+	margin: auto; /* Centers the image in its grid cell */
+}
+#AboutText {
+	font-size: 2vw; /* Adjust as needed */
+	overflow-wrap: break-word; /* Breaks the words to prevent overflow */
+	word-wrap: break-word; /* For older browsers */
+}

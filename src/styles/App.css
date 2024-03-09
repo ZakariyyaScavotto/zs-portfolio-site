@@ -1,0 +1,60 @@
+/* Colors from https://digitalsynopsis.com/design/color-schemes-palettes/, #29 */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+
+#root,
+.App {
+	min-height: 100vh;
+	--night: #090a0fff;
+	--gunmetal: #1b2735ff;
+	--platinum: #ddddddff;
+	--steel-blue: #0582caff;
+	--penn-red: #95190cff;
+	--about-img-black: #050505;
+	/* background: radial-gradient(
+		ellipse at bottom,
+		var(--gunmetal) 0%,
+		var(--night) 100%
+	); */
+	/* background: radial-gradient(
+		ellipse at bottom,
+		var(--about-img-black) 100%,
+		var(--night) 75%,
+		var(--gunmetal) 25%
+	); */
+	background: radial-gradient(
+		circle farthest-corner at center center,
+		#050505 80%,
+		#1b2735 100%
+	);
+}
+
+html,
+body {
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	font-family: "Kode Mono", "Consolas", monospace;
+}
+
+h1 {
+	font-size: 3vw;
+	text-align: center;
+	color: var(--platinum);
+}
+
+h2 {
+	font-size: 2.5vw;
+	text-align: center;
+	color: var(--platinum);
+}
+p {
+	font-size: 1vw;
+	color: var(--platinum);
+}
+
+a {
+	text-decoration: underline;
+	color: var(--steel-blue);
+}
