@@ -1,14 +1,32 @@
 .TopNav {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center; /* Change from 'space-between' to 'center' */
 	align-items: center;
 	width: 40vw;
 	padding: 0 20px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
-	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--about-img-black);
+	border: 1px solid var(--about-img-black);
 }
 .TopNav a {
 	color: var(--steel-blue);
 	text-decoration: none;
 	font-size: 2em;
+}
+.TopNav .Link {
+	cursor: pointer;
+	margin: 0 10px;
+}
+
+.TopNav.hide {
+	top: -50px;
+	transition: top 0.3s;
+}
+
+.TopNav.hide:hover {
+	top: 0;
 }

@@ -1,0 +1,14 @@
+.sideInfo {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 1.5vw;
+	align-items: center;
+	justify-content: center;
+}
+
+.sideInfo a {
+	margin: 10px 0;
+}

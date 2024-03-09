@@ -1,4 +1,4 @@
-.About {
+#About {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	width: 80vw;
@@ -6,6 +6,7 @@
 }
 #AboutHead {
 	grid-column: span 2;
+	margin-top: 2.5%;
 }
 #AboutImage {
 	width: 25vw;
@@ -14,7 +15,10 @@
 	margin: auto; /* Centers the image in its grid cell */
 }
 #AboutText {
-	font-size: 2vw; /* Adjust as needed */
+	font-size: 2vw;
 	overflow-wrap: break-word; /* Breaks the words to prevent overflow */
 	word-wrap: break-word; /* For older browsers */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }

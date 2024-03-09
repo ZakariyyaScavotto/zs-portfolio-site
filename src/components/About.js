@@ -1,17 +1,28 @@
 import React from "react"
 import "../styles/About.css"
 import ZakImage from "../images/picOfZakDarkMode.jpg"
+import TypeWriterEffect from "react-typewriter-effect"
+
 class About extends React.Component {
 	render() {
 		return (
-			<div className="About">
-				<h1 id="AboutHead">Hi, I'm Zakariyya Scavotto</h1>
+			<div id="About">
+				<div id="AboutHead">
+					<TypeWriterEffect
+						startDelay={100}
+						cursorColor="#0582caff"
+						text="Hi, I'm Zakariyya Scavotto"
+						typeSpeed={100}
+						id="AboutHead"
+						textStyle={{ textAlign: "center" }}
+					/>
+				</div>
 				<img src={`${ZakImage}`} alt="Zakariyya Scavotto" id="AboutImage" />
 				<p id="AboutText">
 					I am a CS major in the Class of 2026 at the Stevens Institute of
-					Technology. I have experience in a variety of computer science topics,
-					with my favorites being AI and Machine Learning. I also enjoy playing
-					piano and violin. To learn more about me, explore my experience below!
+					Technology. Most of my CS experience is in AI and Machine Learning,
+					with some experience in Web Development. I also enjoy playing piano
+					and violin, as well as video games.
 				</p>
 			</div>
 		)

@@ -5,7 +5,7 @@ import ResumePDF from "../docs/Zakariyya Scavotto Resume.pdf"
 class Resume extends React.Component {
 	render() {
 		return (
-			<div className="Resume">
+			<div id="Resume">
 				<iframe src={ResumePDF} id="pdfViewer" title="zsResume"></iframe>
 			</div>
 		)

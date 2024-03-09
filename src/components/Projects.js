@@ -3,6 +3,8 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 import "../styles/Projects.css"
 import eegProjectScreenshot from "../images/eegProjectScreenshot.png"
 import newTabScreenshot from "../images/newTab.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 class Projects extends React.Component {
 	constructor(props) {
 		super(props)
@@ -93,9 +95,8 @@ class Projects extends React.Component {
 
 	render() {
 		const project = this.projects[this.state.currentSlide]
-
 		return (
-			<div className="Projects">
+			<div id="Projects">
 				<h1>Projects</h1>
 				<div className="slideshow">
 					<TransitionGroup>
@@ -120,12 +121,14 @@ class Projects extends React.Component {
 							</div>
 						</CSSTransition>
 					</TransitionGroup>
-					<button id="prevButton" onClick={this.prevSlide}>
-						Previous
-					</button>
-					<button id="nextButton" onClick={this.nextSlide}>
-						Next
-					</button>
+					<div className="button-container">
+						<button id="prevButton" onClick={this.prevSlide}>
+							<FontAwesomeIcon icon={faArrowLeft} size="2x" />
+						</button>
+						<button id="nextButton" onClick={this.nextSlide}>
+							<FontAwesomeIcon icon={faArrowRight} size="2x" />
+						</button>
+					</div>
 				</div>
 			</div>
 		)
