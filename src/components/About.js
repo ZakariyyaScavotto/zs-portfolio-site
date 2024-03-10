@@ -4,9 +4,30 @@ import ZakImage from "../images/picOfZakDarkMode.jpg"
 import TypeWriterEffect from "react-typewriter-effect"
 
 class About extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = { isAboutHeadInView: false }
+		this.aboutHeadRef = React.createRef()
+	}
+
 	componentDidMount() {
 		this.adjustMargin()
 		window.addEventListener("resize", this.adjustMargin)
+
+		// Create an intersection observer
+		this.observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					// Set state to start the typing animation
+					this.setState({ isAboutHeadInView: true })
+					// Disconnect the observer after the animation has started
+					this.observer.disconnect()
+				}
+			})
+		})
+
+		// Start observing the AboutHead element
+		this.observer.observe(this.aboutHeadRef.current)
 	}
 
 	componentWillUnmount() {
@@ -25,15 +46,17 @@ class About extends React.Component {
 	render() {
 		return (
 			<div id="About">
-				<div id="AboutHead">
-					<TypeWriterEffect
-						startDelay={100}
-						cursorColor="#0582caff"
-						text="Hi, I'm Zakariyya Scavotto"
-						typeSpeed={100}
-						id="AboutHead"
-						textStyle={{ textAlign: "center" }}
-					/>
+				<div id="AboutHead" ref={this.aboutHeadRef}>
+					{this.state.isAboutHeadInView && (
+						<TypeWriterEffect
+							startDelay={100}
+							cursorColor="#0582caff"
+							text="Hi, I'm Zakariyya Scavotto"
+							typeSpeed={100}
+							id="AboutHead"
+							textStyle={{ textAlign: "center" }}
+						/>
+					)}
 				</div>
 				<img src={`${ZakImage}`} alt="Zakariyya Scavotto" id="AboutImage" />
 				<p id="AboutText">
