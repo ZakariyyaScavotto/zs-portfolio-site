@@ -6,7 +6,9 @@
 }
 #AboutHead {
 	grid-column: span 2;
-	/* margin-top: 5%; */
+}
+#AboutHead h1 {
+	font-size: 5vw;
 }
 #AboutImage {
 	width: 25vw;
@@ -21,4 +23,47 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+}
+@media (max-width: 600px) {
+	#About {
+		grid-template-columns: 1fr;
+		width: 90vw;
+		display: flex;
+		flex-direction: column;
+		padding-top: 5%;
+	}
+
+	#AboutHead {
+		order: 1;
+	}
+
+	#AboutImage {
+		order: 2;
+		width: 60vw;
+		height: 60vw;
+	}
+
+	#AboutText {
+		order: 3;
+		font-size: 4vw;
+		text-align: center;
+	}
+}
+@media (min-width: 601px) and (max-width: 1024px) {
+	#About {
+		width: 85vw;
+	}
+
+	#AboutHead h1 {
+		font-size: 6vw;
+	}
+
+	#AboutImage {
+		width: 35vw;
+		height: 35vw;
+	}
+
+	#AboutText {
+		font-size: 3vw;
+	}
 }

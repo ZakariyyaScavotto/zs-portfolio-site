@@ -4,6 +4,8 @@
 
 #root,
 .App {
+	display: flex;
+	flex-direction: column;
 	min-height: 100vh;
 	--night: #090a0fff;
 	--gunmetal: #1b2735ff;
@@ -11,17 +13,6 @@
 	--steel-blue: #0582caff;
 	--penn-red: #95190cff;
 	--about-img-black: #050505;
-	/* background: radial-gradient(
-		ellipse at bottom,
-		var(--gunmetal) 0%,
-		var(--night) 100%
-	); */
-	/* background: radial-gradient(
-		ellipse at bottom,
-		var(--about-img-black) 100%,
-		var(--night) 75%,
-		var(--gunmetal) 25%
-	); */
 	background: radial-gradient(
 		circle farthest-corner at center center,
 		#050505 80%,
