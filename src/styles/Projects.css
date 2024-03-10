@@ -23,6 +23,8 @@
 	border-radius: 10px;
 	border-color: var(--steel-blue);
 	border-style: solid;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 button {

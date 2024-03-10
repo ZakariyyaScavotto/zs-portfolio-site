@@ -4,6 +4,24 @@ import ZakImage from "../images/picOfZakDarkMode.jpg"
 import TypeWriterEffect from "react-typewriter-effect"
 
 class About extends React.Component {
+	componentDidMount() {
+		this.adjustMargin()
+		window.addEventListener("resize", this.adjustMargin)
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("resize", this.adjustMargin)
+	}
+
+	adjustMargin = () => {
+		const topNav = document.querySelector("#TopNav")
+		const aboutHead = document.querySelector("#AboutHead")
+
+		if (topNav && aboutHead) {
+			aboutHead.style.marginTop = `${topNav.offsetHeight}px`
+		}
+	}
+
 	render() {
 		return (
 			<div id="About">

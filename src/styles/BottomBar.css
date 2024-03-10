@@ -7,4 +7,5 @@
 }
 .bottomBar p {
 	color: var(--steel-blue);
+	font-size: 1.5em;
 }

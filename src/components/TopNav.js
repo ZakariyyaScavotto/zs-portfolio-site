@@ -12,7 +12,7 @@ class TopNav extends React.Component {
 	}
 
 	handleScroll = () => {
-		const topNav = document.querySelector(".TopNav")
+		const topNav = document.querySelector("#TopNav")
 		if (window.scrollY > 0) {
 			topNav.classList.add("hide")
 		} else {
@@ -22,7 +22,7 @@ class TopNav extends React.Component {
 
 	render() {
 		return (
-			<div className="TopNav">
+			<div id="TopNav">
 				<Link className="Link" to="Resume" smooth={true} duration={500}>
 					RESUME
 				</Link>

@@ -6,18 +6,18 @@
 }
 #AboutHead {
 	grid-column: span 2;
-	margin-top: 2.5%;
+	/* margin-top: 5%; */
 }
 #AboutImage {
 	width: 25vw;
 	height: 30vw;
-	object-fit: contain; /* Ensures the image maintains aspect ratio */
-	margin: auto; /* Centers the image in its grid cell */
+	object-fit: contain;
+	margin: auto;
 }
 #AboutText {
 	font-size: 2vw;
-	overflow-wrap: break-word; /* Breaks the words to prevent overflow */
-	word-wrap: break-word; /* For older browsers */
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
