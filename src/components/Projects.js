@@ -39,7 +39,7 @@ class Projects extends React.Component {
 					machine learning model to predict someone's emotional response to
 					music. I also created a demonstration application where an EEG headset
 					could be connected, and it would predict the emotional response of the
-					wearer.The working paper I wrote can be found{" "}
+					wearer. The working paper I wrote can be found{" "}
 					<a
 						href="https://mars.gmu.edu/items/34eda27d-0441-4612-9a66-9fe94ad8eb47"
 						target="_blank"
