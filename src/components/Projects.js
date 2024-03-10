@@ -1,16 +1,23 @@
 import React from "react"
-import { TransitionGroup, CSSTransition } from "react-transition-group"
+import { CSSTransition, SwitchTransition } from "react-transition-group"
 import "../styles/Projects.css"
 import eegProjectScreenshot from "../images/eegProjectScreenshot.png"
 import newTabScreenshot from "../images/newTab.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
+import {
+	faPython,
+	faJs,
+	faCss3,
+	faHtml5
+} from "@fortawesome/free-brands-svg-icons"
 class Projects extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			currentSlide: 0
 		}
+		this.nodeRef = React.createRef() // Create a ref
 	}
 
 	// Array of project data
@@ -32,7 +39,7 @@ class Projects extends React.Component {
 					machine learning model to predict someone's emotional response to
 					music. I also created a demonstration application where an EEG headset
 					could be connected, and it would predict the emotional response of the
-					wearer.The working paper can be found{" "}
+					wearer.The working paper I wrote can be found{" "}
 					<a
 						href="https://mars.gmu.edu/items/34eda27d-0441-4612-9a66-9fe94ad8eb47"
 						target="_blank"
@@ -73,7 +80,7 @@ class Projects extends React.Component {
 				</span>
 			),
 			image: newTabScreenshot,
-			languages: ["JS (React),", "CSS"]
+			languages: ["JS (React)", "CSS", "HTML"]
 		}
 	]
 
@@ -95,32 +102,42 @@ class Projects extends React.Component {
 
 	render() {
 		const project = this.projects[this.state.currentSlide]
+		const languageIcons = {
+			Python: faPython,
+			"JS (React)": faJs,
+			CSS: faCss3,
+			HTML: faHtml5
+		}
 		return (
 			<div id="Projects">
 				<h1>Projects</h1>
 				<div className="slideshow">
-					<TransitionGroup>
+					<SwitchTransition>
 						<CSSTransition
 							key={this.state.currentSlide}
 							timeout={500}
 							classNames="fade"
+							nodeRef={this.nodeRef}
+							// onEntered={this.adjustFontSize}
 						>
-							<div className="slide">
+							<div className="slide" ref={this.nodeRef}>
 								<div className="image-container">
 									<img src={project.image} alt={project.title} />
+									<div className="languages">
+										{project.languages.map((language) => (
+											<span key={language}>
+												<FontAwesomeIcon icon={languageIcons[language]} />
+											</span>
+										))}
+									</div>
 								</div>
 								<div className="text">
 									<h2>{project.title}</h2>
 									<p>{project.description}</p>
 								</div>
-								<div className="languages">
-									{project.languages.map((language) => (
-										<span key={language}>{language}</span>
-									))}
-								</div>
 							</div>
 						</CSSTransition>
-					</TransitionGroup>
+					</SwitchTransition>
 					<div className="button-container">
 						<button id="prevButton" onClick={this.prevSlide}>
 							<FontAwesomeIcon icon={faArrowLeft} size="2x" />
