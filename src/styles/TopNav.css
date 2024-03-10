@@ -23,7 +23,7 @@
 }
 
 #TopNav.hide {
-	top: -50px;
+	top: -200px;
 	transition: top 0.3s;
 }
 
