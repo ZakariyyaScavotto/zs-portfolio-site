@@ -11,7 +11,7 @@ function App() {
 	return (
 		<div className="App">
 			<Helmet>
-				<title>New Tab</title>
+				<title>Zakariyya Scavotto</title>
 			</Helmet>
 			<TopNav />
 			<SideInfo />
