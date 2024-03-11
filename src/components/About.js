@@ -62,8 +62,8 @@ class About extends React.Component {
 				<p id="AboutText">
 					I am a CS major in the Class of 2026 at the Stevens Institute of
 					Technology. Most of my CS experience is in AI and Machine Learning,
-					with some experience in Web Development. I also enjoy playing piano
-					and violin, as well as video games.
+					with some experience in Web Development. I enjoy playing piano and
+					violin, and I am an avid gamer!
 				</p>
 			</div>
 		)
